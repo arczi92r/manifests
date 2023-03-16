@@ -15,7 +15,6 @@ applications:
       selfHeal: "true"
       options:
         createNamespace: "true"
-
   - name: "istiod"
     project: "ml"
     destination:
@@ -32,7 +31,6 @@ applications:
       selfHeal: "true"
       options:
         createNamespace: "true"
-
   - name: "istio-gateway"
     project: "ml"
     destination:
