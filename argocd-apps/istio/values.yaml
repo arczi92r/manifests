@@ -6,12 +6,19 @@ base:
   project: "ml"
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: "istio-base"
+    namespace: "istio"
   source:
     repoURL: "https://istio-release.storage.googleapis.com/charts"
     chart: "base"
 
-
+istiod:
+  project: "ml"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "istio"
+  source:
+    repoURL: "https://istio-release.storage.googleapis.com/charts"
+    chart: "istiod"
 
 
 replicaCount: 1
