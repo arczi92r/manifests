@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ include "istio.fullname" . }}
+  name: istio-base
 spec:
   destination:
     name: ''
