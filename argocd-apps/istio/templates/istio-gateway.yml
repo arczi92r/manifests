@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-gateway
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: {{ .Values.gateway.destination.namespace }}
+    server: {{ .Values.gateway.destination.server }}
+  source:
+    path: ''
+    repoURL: {{ .Values.gateway.source.repoURL }}
+    targetRevision: {{ .Values.gateway.source.targetRevision }}
+    chart: {{ .Values.gateway.source.chart }}
+  project: {{ .Values.gateway.project }}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

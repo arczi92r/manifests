@@ -22,6 +22,19 @@ istiod:
     chart: "istiod"
     targetRevision: "1.17.1"
 
+gateway:
+  project: "ml"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "istio-ingress"
+  source:
+    repoURL: "https://istio-release.storage.googleapis.com/charts"
+    chart: "gateway"
+    targetRevision: "1.17.1"
+
+
+
+
 
 replicaCount: 1
 
