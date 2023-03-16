@@ -11,7 +11,7 @@ spec:
   source:
     path: ''
     repoURL: {{ .Values.base.source.repoURL }}
-    targetRevision: ''
+    targetRevision: {{ .Values.base.source.targetRevision }}
     chart: {{ .Values.base.source.chart }}
   project: {{ .Values.base.project }}
   syncPolicy:

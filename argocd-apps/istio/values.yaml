@@ -10,6 +10,7 @@ base:
   source:
     repoURL: "https://istio-release.storage.googleapis.com/charts"
     chart: "base"
+    targetRevision: "1.17.1"
 
 istiod:
   project: "ml"
@@ -19,6 +20,7 @@ istiod:
   source:
     repoURL: "https://istio-release.storage.googleapis.com/charts"
     chart: "istiod"
+    targetRevision: "1.17.1"
 
 
 replicaCount: 1
