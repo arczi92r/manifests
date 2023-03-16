@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-base
+spec:
+  destination:
+    name: ''
+    namespace: istio-system
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://istio-release.storage.googleapis.com/charts'
+    targetRevision: ''
+    chart: base
+  project: ml
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
