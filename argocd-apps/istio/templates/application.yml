@@ -7,6 +7,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
+    name: {{ .destination.name }}
     namespace: {{ .destination.namespace }}
     server: {{ .destination.server }}
   source:
