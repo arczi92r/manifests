@@ -1,23 +1,23 @@
-{{- range $key, $val := .Values.applications }}
+{{- range .Values.applications }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $val.name }}
+  name: {{ .name }}
   namespace: argocd
 spec:
   destination:
-    namespace: {{ $val.destination.namespace }}
-    server: {{ $val.destination.server }}
+    namespace: {{ .destination.namespace }}
+    server: {{ .destination.server }}
   source:
-    chart: {{ $val.source.chart }}
-    path: {{ $val.source.path }}
-    repoURL: {{ $val.source.repoURL }}
-    targetRevision: {{ $val.source.targetRevision }}
-  project: {{ $val.project }}
+    chart: {{ .source.chart }}
+    path: {{ .source.path }}
+    repoURL: {{ .source.repoURL }}
+    targetRevision: {{ .source.targetRevision }}
+  project: {{ .project }}
   syncPolicy:
     automated:
-      prune: {{ $val.syncPolicy.autoPrune }}
-      selfHeal: {{ $val.syncPolicy.selfHeal }}
+      prune: {{ .syncPolicy.autoPrune }}
+      selfHeal: {{ .syncPolicy.selfHeal }}
     syncOptions:
-      - CreateNamespace={{ $val.syncPolicy.options.createNamespace }}
+      - CreateNamespace={{ .syncPolicy.options.createNamespace }}
 {{- end }}
