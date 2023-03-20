@@ -6,7 +6,7 @@ metadata:
 spec:
   project: ml
   source:
-      path: "manifests/kustomize"
+      path: "manifests/kustomize/sample/cluster-scoped-resources"
       repoURL: "https://github.com/kubeflow/pipelines"
       targetRevision: "1.6.0"
   destination:
