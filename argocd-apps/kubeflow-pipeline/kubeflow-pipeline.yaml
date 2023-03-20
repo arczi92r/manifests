@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ""
+  namespace: "kubeflow-pipeline" 
+spec:
+  project: ml
+  source:
+      path: "manifests/kustomize"
+      repoURL: "https://github.com/kubeflow/pipelines"
+      targetRevision: "1.6.0"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: "kubeflow-pipeline" 
+  syncPolicy:
+      autoPrune: "true"
+      selfHeal: "true"
+      options:
+        createNamespace: "true"
