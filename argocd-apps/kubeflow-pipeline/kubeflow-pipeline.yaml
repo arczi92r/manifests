@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "kubeflow-pipeline-app"
-  namespace: "kubeflow-pipeline" 
+  namespace: argocd
 spec:
   project: ml
   source:
