@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ""
+  name: "kubeflow-pipeline-app"
   namespace: "kubeflow-pipeline" 
 spec:
   project: ml
@@ -13,7 +13,8 @@ spec:
     server: https://kubernetes.default.svc
     namespace: "kubeflow-pipeline" 
   syncPolicy:
-      autoPrune: "true"
-      selfHeal: "true"
-      options:
-        createNamespace: "true"
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
