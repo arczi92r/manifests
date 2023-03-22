@@ -11,7 +11,7 @@ spec:
     targetRevision: damian
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: kubeflow-pipeline
+    namespace: kubeflow-centraldashboard
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
