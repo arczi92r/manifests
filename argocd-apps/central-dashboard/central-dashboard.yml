@@ -6,7 +6,7 @@ metadata:
 spec:
   project: ml
   source:
-    path: "components/centraldashboard/manifests/base/"
+    path: "components/centraldashboard/manifests/base"
     repoURL: "https://github.com/kubeflow/kubeflow.git"
     targetRevision: "v1.6.0"
   destination:
