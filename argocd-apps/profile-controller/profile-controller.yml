@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "kubeflow-centraldashboard"
+  name: "profile-controller"
   namespace: argocd
   inalizers:
   - resources-finalizer.argocd.argoproj.io
