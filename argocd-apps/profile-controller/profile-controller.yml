@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "profile-controller"
+  name: "profile-controller-app"
   namespace: argocd
   inalizers:
   - resources-finalizer.argocd.argoproj.io
