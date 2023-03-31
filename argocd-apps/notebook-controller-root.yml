@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notebook-controller-root
+  namespace: argocd
+spec:
+  project: ml
+  source:
+    repoURL: 'https://github.com/arczi92r/manifests'
+    path: argocd-apps/notebook-controller
+    targetRevision: damian
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: notebook-controller
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

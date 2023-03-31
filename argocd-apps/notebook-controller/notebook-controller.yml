@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "notebook-controller-app"
+  namespace: argocd
+spec:
+  project: ml
+  source:
+    path: "components/notebook-controller/config/overlays/kubeflow"
+    repoURL: "https://github.com/kubeflow/kubeflow.git"
+    targetRevision: "v1.6.0"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: "kubeflow"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
